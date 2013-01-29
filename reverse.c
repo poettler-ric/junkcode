@@ -11,6 +11,13 @@ void strrev(char *p) {
 	++q;
     }
 
+    // p moves from the beginning of the word to teh middle
+    // q moves from the end of the word to the middle
+    //
+    // --q: move away from the '\0' at the end of the string
+    // p < q: we only need to swap chars until the middle of the string
+    // 		"12345" => "52341" => "54321"
+    // ++p, --q: move the pointers towards the middle
     for(--q; p < q; ++p, --q) {
 	// XOR-swap (only works if x and y are not identical)
 	// x      y
